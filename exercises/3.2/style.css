@@ -1,0 +1,30 @@
+        body {
+            font-size: 16px;
+        }
+
+        h1 {
+            font-size: 65px;
+            color: orange;
+            font-family: 'Lucida Sans', sans-serif;
+        }
+
+        p {
+            font-weight: 600;
+            font-size: 3em;
+            background-color: yellow;
+        }
+
+        #yellow-li {
+            font-style: italic;
+            background-color: yellow;
+        }
+
+        #red-li {
+            font-style: italic;
+            background-color: red;
+        }
+
+        #brown-li {
+            font-style: italic;
+            background-color: brown;
+        }
