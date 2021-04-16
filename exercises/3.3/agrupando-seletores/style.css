@@ -1,0 +1,44 @@
+h1, p {
+    text-align: center;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+div {
+    background-color: grey;
+}
+
+div:nth-child(even) {
+    font-style: italic;
+}
+
+div:nth-of-type(2) {
+    background-color: red;
+}
+
+div:nth-of-type(3) {
+    padding: 10px;
+    background-color: yellow;
+}
+
+div:nth-of-type(4) {
+    background-color: teal;
+}
+
+div:nth-of-type(5) {
+    background-color: brown;
+}
+
+div:hover {
+    border: 5px solid black;
+}
+
+ol:hover {
+    background-color: teal;
+}
+
+li:active {
+    font-family: sans-serif;
+}
