@@ -31,7 +31,7 @@ for (let topLeft = 1; topLeft < 8; topLeft += 1) {
     let queenMoveY = queenY + topLeft;
     let queenMoveX = queenX - topLeft;
 
-    if (queenY > 8 || queenX > 8) {
+    if (queenY > 8 || queenX < 1) {
         break;
     }
 
@@ -45,7 +45,7 @@ for (let bottomRight = 1; bottomRight < 8; bottomRight += 1) {
     let queenMoveY = queenY - bottomRight;
     let queenMoveX = queenX + bottomRight;
 
-    if (queenY > 8 || queenX > 8) {
+    if (queenY < 1 || queenX > 8) {
         break;
     }
 
@@ -59,7 +59,7 @@ for (let bottomLeft = 1; bottomLeft < 8; bottomLeft += 1) {
     let queenMoveY = queenY - bottomLeft;
     let queenMoveX = queenX - bottomLeft;
 
-    if (queenY > 8 || queenX > 8) {
+    if (queenY < 1 || queenX < 1) {
         break;
     }
 
