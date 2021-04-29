@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2 id="page-title">Título</h2>
+    <p class="paragraph">Dê uma cor para este parágrafo!</p>
+    <h4 id="subtitle">Subtítulo</h4>
+    <p id="second-paragraph">Segundo parágrafo!</p>
+    <p class="paragraph">Terceiro parágrafo, mas que é igual ao primeiro!</p>
+
+    <script>
+      var paragraph = document.querySelectorAll(".paragraph");
+      paragraph[0].style.color = "red";
+
+      var title = document.querySelector("#page-title");
+      title.innerText = 'O Senhor dos Anéis';
+
+      var secondParagraph = document.querySelector("#second-paragraph");
+      secondParagraph.innerText = "Uma vez Flamengo, sempre Flamengo!";
+
+      var subtitle = document.querySelector("#subtitle");
+      subtitle.innerText = "Não faz sentido.";
+
+      document.querySelectorAll("h4")[0].style.color = "green";
+    </script>
+  </body>
+</html>
