@@ -13,6 +13,8 @@ function createDaysOfTheWeek() {
   
 function createDaysOfTheMonth() {
     const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
+    const holidays = [24, 25, 31];
+    const fridays = [4, 11, 18, 25];
     const daysList = document.querySelector('#days');
 
     for (let index = 0; index < dezDaysList.length; index += 1) {
@@ -20,12 +22,19 @@ function createDaysOfTheMonth() {
         const dayListItem = document.createElement('li');
         dayListItem.innerHTML = days;
 
+        for (let dayOff in holidays) {
+            if (holidays[dayOff] === days) {
+                dayListItem.className = 'day holiday';
+                break;
+            } else {
+                dayListItem.className = 'day';
+            }
+        }
         daysList.appendChild(dayListItem);
     }
 }
 
-function daysOff() {
-    const holidays = [24, 25, 31];
+function btnHoliday() {
     const container = document.querySelector('.buttons-container');
     const btn = document.createElement('button');
     btn.className = 'btn-holiday';
@@ -34,10 +43,34 @@ function daysOff() {
     container.appendChild(btn);
 }
 
-function fridays() {
-    const fridays = [4, 11, 18, 25];
+function btnFriday() {
+    const container = document.querySelector('.buttons-container');
+    const btn = document.createElement('button');
+    btn.className = 'btn-friday';
+    btn.innerHTML = 'Sexta-feira';
+
+    container.appendChild(btn);
+}
+
+function highlightHoliday () {
+    const holidays = document.querySelectorAll(".holiday");
+
+    for (let day in holidays) {
+        if (holidays[day].style.backgroundColor == 'white') {
+            holidays[day].style.backgroundColor = '#eee';
+        } else {
+            holidays[day].style.backgroundColor = 'white';
+        }
+    }
+}
+
+function highlightFriday () {
+
 }
 
 createDaysOfTheWeek();
 createDaysOfTheMonth();
-daysOff();
+btnHoliday();
+btnFriday();
+
+document.querySelector('.btn-holiday').addEventListener('click', highlightHoliday);
