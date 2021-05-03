@@ -15,21 +15,27 @@ function createDaysOfTheMonth() {
     const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
     const holidays = [24, 25, 31];
     const fridays = [4, 11, 18, 25];
+
     const daysList = document.querySelector('#days');
 
     for (let index = 0; index < dezDaysList.length; index += 1) {
         const days = dezDaysList[index];
         const dayListItem = document.createElement('li');
         dayListItem.innerHTML = days;
+        dayListItem.className = 'day';
 
         for (let dayOff in holidays) {
             if (holidays[dayOff] === days) {
-                dayListItem.className = 'day holiday';
-                break;
-            } else {
-                dayListItem.className = 'day';
+                dayListItem.classList.add("holiday");
             }
         }
+
+        for (let dayOff in fridays) {
+            if (fridays[dayOff] === days) {
+                dayListItem.classList.add("friday");
+            }
+        }
+
         daysList.appendChild(dayListItem);
     }
 }
@@ -65,7 +71,15 @@ function highlightHoliday () {
 }
 
 function highlightFriday () {
+    const holidays = document.querySelectorAll(".friday");
 
+    for (let day in holidays) {
+        if (holidays[day].innerHTML == 'SEXTOU o/') {
+            holidays[day].innerHTML = parseInt(holidays[day].previousElementSibling.innerHTML) + 1;
+        } else {
+            holidays[day].innerHTML = 'SEXTOU o/';
+        }
+    }
 }
 
 createDaysOfTheWeek();
@@ -74,3 +88,5 @@ btnHoliday();
 btnFriday();
 
 document.querySelector('.btn-holiday').addEventListener('click', highlightHoliday);
+
+document.querySelector('.btn-friday').addEventListener('click', highlightFriday);
