@@ -24,5 +24,20 @@ function createDaysOfTheMonth() {
     }
 }
 
+function daysOff() {
+    const holidays = [24, 25, 31];
+    const container = document.querySelector('.buttons-container');
+    const btn = document.createElement('button');
+    btn.className = 'btn-holiday';
+    btn.innerHTML = 'Feriados';
+
+    container.appendChild(btn);
+}
+
+function fridays() {
+    const fridays = [4, 11, 18, 25];
+}
+
 createDaysOfTheWeek();
 createDaysOfTheMonth();
+daysOff();
