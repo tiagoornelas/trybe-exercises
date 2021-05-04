@@ -90,3 +90,17 @@ btnFriday();
 document.querySelector('.btn-holiday').addEventListener('click', highlightHoliday);
 
 document.querySelector('.btn-friday').addEventListener('click', highlightFriday);
+
+function zoomIn(event) {
+    let alvo = event.target;
+    alvo.style.fontSize = '22px';
+}
+
+function zoomOut(event) {
+    let alvo = event.target;
+    alvo.style.fontSize = '20px';
+}
+
+const daysCalendar = document.querySelectorAll("ul")[2];
+daysCalendar.addEventListener('mouseover', zoomIn);
+daysCalendar.addEventListener('mouseout', zoomOut);
