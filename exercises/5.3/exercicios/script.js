@@ -104,3 +104,12 @@ function zoomOut(event) {
 const daysCalendar = document.querySelectorAll("ul")[2];
 daysCalendar.addEventListener('mouseover', zoomIn);
 daysCalendar.addEventListener('mouseout', zoomOut);
+
+function createTask(task) {
+    let span = document.createElement('span');
+    span.innerHTML = task;
+
+    document.querySelector(".my-tasks").appendChild(span);
+}
+
+createTask("Cozinhar");
