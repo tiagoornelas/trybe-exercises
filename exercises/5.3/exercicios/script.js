@@ -101,7 +101,7 @@ function zoomOut(event) {
     alvo.style.fontSize = '20px';
 }
 
-const daysCalendar = document.querySelectorAll("ul")[2];
+const daysCalendar = document.querySelectorAll("ul li")[2];
 daysCalendar.addEventListener('mouseover', zoomIn);
 daysCalendar.addEventListener('mouseout', zoomOut);
 
@@ -122,4 +122,5 @@ function label(color) {
     document.querySelector(".my-tasks").appendChild(label);
 }
 
-label("yellow");
+label("green");
+
