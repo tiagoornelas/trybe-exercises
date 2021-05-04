@@ -101,7 +101,7 @@ function zoomOut(event) {
     alvo.style.fontSize = '20px';
 }
 
-const daysCalendar = document.querySelectorAll("ul li")[2];
+const daysCalendar = document.querySelectorAll("ul")[2];
 daysCalendar.addEventListener('mouseover', zoomIn);
 daysCalendar.addEventListener('mouseout', zoomOut);
 
@@ -124,3 +124,26 @@ function label(color) {
 
 label("green");
 
+const taskSelected = document.querySelector(".task");
+taskSelected.addEventListener('click', pickColor);
+
+function pickColor() {
+    if (taskSelected.className === 'task') {
+        taskSelected.className = 'task selected';
+    } else {
+        taskSelected.className = 'task';
+    }
+}
+
+function paint(event) {
+    let alvo = event.target;
+    let selection = document.querySelector(".selected");
+    let color = selection.style.backgroundColor;
+    if (alvo.style.color !== color) {
+        alvo.style.color = color;
+    } else {
+        alvo.style.color = 'rgb(119,119,119)';
+    }
+}
+
+daysCalendar.addEventListener('click', paint);
