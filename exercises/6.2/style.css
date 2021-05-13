@@ -1,0 +1,33 @@
+fieldset {
+    padding: 25px;
+    border-radius: 5px;
+}
+
+input {
+    width: 90%;
+    margin: 0 auto;
+    border: rgb(210,210,210) solid 0.1px;
+    border-radius: 5px;
+    padding: 4px;
+}
+
+select {
+    padding: 4px;
+    border-radius: 5px;
+    background-color: white;
+    border: rgb(210,210,210) solid 0.1px;
+}
+
+textarea {
+    padding: 4px;
+    border-radius: 5px;
+    border: rgb(210,210,210) solid 0.1px;
+}
+
+button {
+    margin: 10px;
+}
+
+#apartamento, #casa {
+    width: 5%;
+}
