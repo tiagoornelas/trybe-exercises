@@ -67,3 +67,21 @@ const longestWord = (phrase) => {
 };
 
 longestWord('Antônio foi no banheiro e não sabemos o que aconteceu');
+
+const strReplace = (string, replacement) => {
+  var myStr = string;
+  var newStr = myStr.replace(/x/g, replacement);
+
+  console.log(newStr);
+};
+
+let resultFct1 = 'Tryber x aqui!';
+let skills = ['JavaScript', 'HTML', '#goTrybe'];
+
+const concatFunctions = (function1, skills) => {
+  console.log(
+    `${function1} Minhas cinco principais habilidades são ${skills.join(', ')}!`
+  );
+};
+
+concatFunctions(resultFct1, skills);
