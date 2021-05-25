@@ -1,3 +1,5 @@
+// 1
+
 const createEmail = (nome) => {
   let array = nome.toLowerCase();
   array = array.split(' ');
@@ -19,3 +21,37 @@ const newEmployees = () => {
 };
 
 console.log(newEmployees());
+
+// 2
+const checkWin = (a, b) =>
+  a === b ? 'Parabéns você ganhou!' : 'Tente novemente!';
+
+const guess = (numb, funct) => {
+  let random = parseInt(Math.random() * 5);
+  console.log(funct(random, numb));
+};
+
+guess(4, checkWin);
+
+// 3
+
+const rightAnswers = ['A', 'C', 'B', 'D', 'A', 'A', 'D', 'A', 'D', 'C'];
+const studentAnswers = ['A', 'N.A', 'B', 'D', 'A', 'C', 'N.A', 'A', 'D', 'B'];
+
+const correctExam = (right, student) => {
+  let grade = 0;
+  for (let answer in right) {
+    if (right[answer] !== student[answer]) {
+      grade -= 0.5;
+    } else {
+      grade += 1;
+    }
+  }
+  console.log(grade);
+};
+
+const exam = (a, b, funct) => {
+  funct(a, b);
+};
+
+exam(rightAnswers, studentAnswers, correctExam);
