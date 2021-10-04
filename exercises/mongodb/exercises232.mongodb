@@ -1,0 +1,115 @@
+// Antes dos exercícios
+use('trybe');
+db.superheroes.count();
+
+// Exercício 1
+use('trybe');
+db.superheroes.find().limit(1);
+
+// Exercício 2
+use('trybe');
+db.superheroes.find({'aspects.height': { $lt: 180}});
+
+// Exercício 3
+use('trybe');
+db.superheroes.find({'aspects.height': { $lt: 180}}).count();
+
+// Exercício 4
+use('trybe');
+db.superheroes.find({'aspects.height': { $lte: 180}}).count();
+
+// Exercício 5
+use('trybe');
+db.superheroes.find({'aspects.height': { $gte: 200}}).limit(1);
+
+// Exercício 6
+use('trybe');
+db.superheroes.find({'aspects.height': { $gte: 200}}).count();
+
+// Exercício 7
+use('trybe');
+db.superheroes.find({'aspects.eyeColor': 'green'});
+
+// Exercício 8
+use('trybe');
+db.superheroes.find({'aspects.eyeColor': 'blue'}).count();
+
+// Exercício 9
+use('trybe');
+db.superheroes.find({'aspects.hairColor': {$in: ['black','No Hair']}});
+
+// Exercício 10
+use('trybe');
+db.superheroes.find({'aspects.hairColor': {$in: ['black','No Hair']}})
+.count();
+
+// Exercício 11
+use('trybe');
+db.superheroes.find({'aspects.hairColor': {$nin: ['black','No Hair']}})
+.count();
+
+// Exercício 12
+use('trybe');
+db.superheroes.find({'aspects.height': { $not: { $gt: 180 } } });
+
+// Exercício 13
+use('trybe');
+db.superheroes.find({
+  $nor: [
+    { 'aspects.height': { $gt: 180 } },
+    { race: 'Human'}
+  ]
+});
+
+// Exercício 14
+use('trybe');
+db.superheroes.find({
+  $and: [
+    { publisher: 'Marvel Comics' },
+    {
+      $or: [
+        {'aspects.height': 180},
+        {'aspects.height': 200},
+      ]
+    }
+  ]
+});
+
+// Exercício 15
+use('trybe');
+db.superheroes.find({
+  $and: [
+    { race: 'Human' },
+    { publisher: { $ne: 'DC Comics' } },
+    {
+      $or: [
+        {'aspects.height': { $gte: 80 }},
+        {'aspects.height': { $lte: 100 }},
+      ]
+    }
+  ]
+});
+
+// Exercício 16
+use('trybe');
+db.superheroes.find({
+  race: {
+    $exists: false
+  }
+}).count();
+
+// Exercício 17
+use('trybe');
+db.superheroes.find({
+  'aspects.hairColor': {
+    $exists: true
+  }
+}).count();
+
+// Exercício 18
+use('trybe');
+db.superheores.deleteOne({publisher: 'Sony Pictures'});
+
+// Exercício 19
+use('trybe');
+db.superheroes.deleteMany({ublisher: 'George Lucas'});
